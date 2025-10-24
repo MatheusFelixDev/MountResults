@@ -1,1 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap");
 @import "tailwindcss";
+
+@tailwind utilities;
+
+/* ===== Variáveis CSS ===== */
+:root {
+  --background: #f9fafb;
+  --foreground: #111827;
+  --primary: #1e3a8a;
+  --secondary: #3b82f6;
+
+  --darkBackground: #111827;
+  --darkText: #f9fafb;
+}
+
+/* ===== Base styles ===== */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  color: var(--secondary);
+}
+
+a {
+  transition: color 0.2s;
+}
+
+/* ===== Dark mode ===== */
+.dark body {
+  background-color: var(--darkBackground);
+  color: var(--darkText);
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: white;
+}
+
+.dark a {
+  color: var(--darkText);
+}
+
+/* ===== Botões ===== */
+.btn-primary {
+  @apply inline-block font-medium px-6 py-3 rounded-xl text-white shadow-md transition;
+  background-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: #1d36b8;
+}
+
+.btn-secondary {
+  @apply inline-block font-medium px-6 py-3 rounded-xl border-2 transition;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* ===== Container padrão ===== */
+.container {
+  @apply max-w-6xl mx-auto px-6;
+}
